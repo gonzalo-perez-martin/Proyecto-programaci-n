@@ -1,2 +1,2 @@
-# Proyecto-programaci-n
+# Proyecto-programacion
 Proyecto
