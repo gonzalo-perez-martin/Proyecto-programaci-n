@@ -26,10 +26,14 @@ v_vuelo = 800 * np.sin(np.pi * t_vuelo / 60) * np.exp(-0.02 * t_vuelo)
 #APARTADO 1: Balance de masas
 
 def Balance_de_masas(A: np.array, b: np.array) -> np.array:
-    reacciones = np.linalg.solve(A, b)
-    return reacciones
+    fuerza_en_cada_apoyo = np.linalg.solve(A, b)
+    return fuerza_en_cada_apoyo
 #A es la matriz de geometria estatica, b es el vector de cargas. 
 #X es el vector de reacciones desconocidas. 
 #A*x = b 
 x = Balance_de_masas(matriz_estatica, vector_cargas)
-print(x)
+print(x[0], "(N) Fuerza en apoyo 1")
+print(x[1], "(N) Fuerza en apoyo 2")
+print(x[2], "(N) Fuerza en apoyo 3")
+
+#APARTADO 2: Calibracion del motor
