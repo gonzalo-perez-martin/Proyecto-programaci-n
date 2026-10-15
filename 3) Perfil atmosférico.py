@@ -15,4 +15,4 @@ T_flight = interp(h_flight, h_atm, T_atm)
 
 t = float(input("Type a number: "))
 T = interp(altitude(t), h_atm, T_atm)
-print(T)
+print("La temperatura tras ",t ," segundos es de ", T)
