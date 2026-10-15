@@ -22,3 +22,14 @@ P_atm = np.array([101325, 79501, 61660, 47217, 35651, 26499, 19399, 14170])
 t_vuelo = np.linspace(0, 60, 1200) # Muestreo a 20 Hz
 # (Perfil simulado de velocidad de un cohete)
 v_vuelo = 800 * np.sin(np.pi * t_vuelo / 60) * np.exp(-0.02 * t_vuelo)
+
+#APARTADO 1: Balance de masas
+
+def Balance_de_masas(A: np.array, b: np.array) -> np.array:
+    reacciones = np.linalg.solve(A, b)
+    return reacciones
+#A es la matriz de geometria estatica, b es el vector de cargas. 
+#X es el vector de reacciones desconocidas. 
+#A*x = b 
+x = Balance_de_masas(matriz_estatica, vector_cargas)
+print(x)
