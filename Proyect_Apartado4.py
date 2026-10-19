@@ -26,7 +26,7 @@ def Mach(t: float | np.ndarray) -> float | np.ndarray:        #define la funció
 t_vuelo = np.linspace(0.0, 60.0, 1200)           #Crea un array de 1200 elementos que van desde 0 a 60 segundos, con un paso de 0.05 segundos entre cada elemento. Este array representa los tiempos de vuelo analizados.
 mach_analizados = Mach(t_vuelo)                  #Calcula el Mach correspondiente a cada tiempo en t_vuelo utilizando la función Mach definida anteriormente. El resultado es un array de Machs correspondientes a cada tiempo analizado.
 
-i= np.argmax (mach_analizados >= Mach_Cr)                                                 #np.argmax compara los valores de mach_analizados con Mach_Cr
+i= np.argmax (mach_analizados >= Mach_Cr)                                                 #np.argmax busca el argumento donde se alcanza el valor máximo del vector que cumple la condición. compara los valores de mach_analizados con Mach_Cr
 if mach_analizados[i] < Mach_Cr:                                                          #si no halla ninguno igual al Mach crítico devuelve un 0 y procede a la siguiente línea
     raise ValueError("El cohete no alcanza el Mach crítico en el intervalo analizado")    #Raise detiene el programa mostrando un error con el siguiente mensaje si el Mach crítico no ocurrió entre 0 y 60 segundos.
 
